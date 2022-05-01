@@ -15,7 +15,11 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params: { slug } }) {
+export async function getStaticProps({ params: { slug } }: {
+  params: {
+    slug: string
+  }
+}) {
   const fileName = fs.readFileSync(`./pages/posts/${slug}.md`, 'utf-8');
   const { data: frontmatter, content } = matter(fileName);
   return {
@@ -26,7 +30,14 @@ export async function getStaticProps({ params: { slug } }) {
   };
 }
 
-export default function Quiz({ frontmatter, content }) {
+type TQuiz = {
+  frontmatter: {
+    [key: string]: any,
+  }
+  content: string
+}
+
+export default function Quiz({ frontmatter, content }: TQuiz) {
   return (
     <div className='prose mx-auto'>
       <h1>{frontmatter.title}</h1>

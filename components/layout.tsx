@@ -1,6 +1,12 @@
 import Link from 'next/link';
 
-export default function Layout({ children }) {
+type TLayout = {
+  children?:
+  | React.ReactChild
+  | React.ReactChild[]
+}
+
+export default function Layout({ children }: TLayout) {
 
   return (
     <div className='flex flex-col min-h-screen'>
