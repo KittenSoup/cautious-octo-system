@@ -3,6 +3,12 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Getting Started
 Requires nodejs/npm, install that first: https://nodejs.org/en/download/
 
+Use npm to install dependencies:
+
+```bash
+npm install
+```
+
 then, run the development server:
 
 ```bash
